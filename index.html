@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>ReservaFácil</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="logo">🍽️ ReservaFácil</div>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#formulario">Nueva reserva</a>
+    <a href="#lista">Reservas</a>
+    <a href="#calendario">Calendario</a>
+  </nav>
+</header>
+
+<section id="inicio" class="hero">
+  <h1>ReservaFácil</h1>
+  <p>Sistema web de reservas de mesas para restaurantes</p>
+  <a href="#formulario" class="btn">Iniciar sesión</a>
+</section>
+
+<section id="formulario" class="card">
+  <h2>Nueva Reserva</h2>
+  <p>Complete los datos de la reserva</p>
+  <div id="mensaje" class="mensaje"></div>
+  <form id="formReserva">
+    <div class="grid">
+      <input id="cliente" placeholder="Nombre del cliente" required>
+      <input id="telefono" placeholder="Teléfono" required>
+      <input id="fecha" type="date" required>
+      <input id="hora_inicio" type="time" required>
+      <input id="hora_fin" type="time" required>
+      <select id="personas" required>
+        <option value="">Seleccione personas</option>
+        <option>2 personas</option><option>3 personas</option><option>4 personas</option>
+        <option>5 personas</option><option>6 personas</option>
+      </select>
+      <select id="mesa" required>
+        <option value="">Seleccione mesa</option>
+        <option>Mesa 1</option><option>Mesa 3</option><option>Mesa 5</option>
+        <option>Mesa 8</option><option>Mesa 10</option><option>Mesa 12</option>
+      </select>
+      <select id="estado" required>
+        <option>Confirmada</option><option>Pendiente</option><option>En espera</option><option>Cancelada</option>
+      </select>
+    </div>
+    <textarea id="comentarios" placeholder="Comentario adicional"></textarea>
+    <button type="submit" class="btn">Guardar Reserva</button>
+    <button type="reset" class="btn-secundario">Cancelar</button>
+  </form>
+</section>
+
+<section id="confirmacion" class="card oculto">
+  <div class="check">✓</div>
+  <h2>¡Reserva registrada correctamente!</h2>
+  <p>Tu reserva ha sido guardada</p>
+</section>
+
+<section id="lista" class="card">
+  <h2>Reservas registradas</h2>
+  <input id="buscar" placeholder="Buscar reserva..." class="buscar">
+  <table>
+    <thead>
+      <tr>
+        <th>Cliente</th><th>Fecha</th><th>Horario</th><th>Personas</th><th>Mesa</th><th>Estado</th><th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="tablaReservas"></tbody>
+  </table>
+</section>
+
+<section id="calendario" class="card">
+  <h2>Calendario de reservas</h2>
+  <p>Haz clic en un día para ver sus reservas.</p>
+  <div class="contenedor-calendario">
+    <div>
+      <h3>Junio 2026</h3>
+      <div id="calendarioDias" class="calendario"></div>
+    </div>
+    <div class="reservas-dia">
+      <h3>Reservas del día</h3>
+      <p id="fechaSeleccionada">Seleccione una fecha</p>
+      <div id="reservasDelDia"></div>
+    </div>
+  </div>
+</section>
+<script src="script.js"></script>
+</body>
+</html>
