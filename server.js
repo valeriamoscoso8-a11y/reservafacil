@@ -10,10 +10,11 @@ app.use(express.json());
 app.use(express.static(__dirname));
 
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "reservafacil_user",
-password: "Reserva123",
-  database: "reservafacil"
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT
 });
 
 db.connect((err) => {
