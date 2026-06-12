@@ -9,12 +9,25 @@
 <header>
   <div class="logo">🍽️ ReservaFácil</div>
   <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#formulario">Nueva reserva</a>
-    <a href="#lista">Reservas</a>
     <a href="#calendario">Calendario</a>
+    <button id="btnCerrar" class="btn-secundario oculto" onclick="cerrarSesion()">Cerrar sesión</button>
   </nav>
 </header>
+<section id="login" class="card login-card">
+  <h2>Iniciar sesión</h2>
+  <p>Acceda al sistema de reservas</p>
+
+  <input id="usuario" placeholder="Usuario">
+  <input id="clave" type="password" placeholder="Contraseña">
+
+  <button onclick="iniciarSesion()" class="btn">Ingresar</button>
+  <p id="mensajeLogin" class="mensaje-login"></p>
+</section>
+
+  <section id="inicio" class="hero oculto">
+<section id="formulario" class="card oculto">
+<section id="lista" class="card oculto">
+<section id="calendario" class="card oculto">
 
 <section id="inicio" class="hero">
   <h1>ReservaFácil</h1>
