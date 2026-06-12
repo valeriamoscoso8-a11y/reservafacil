@@ -5,41 +5,58 @@
   <title>ReservaFácil</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
 <header>
   <div class="logo">🍽️ ReservaFácil</div>
   <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#formulario">Nueva reserva</a>
+    <a href="#lista">Reservas</a>
     <a href="#calendario">Calendario</a>
-    <button id="btnCerrar" class="btn-secundario oculto" onclick="cerrarSesion()">Cerrar sesión</button>
   </nav>
 </header>
-<section id="login" class="card login-card">
-   <p>Iniciar Sesión</p>
-
-  <input id="usuario" placeholder="Usuario">
-  <input id="clave" type="password" placeholder="Contraseña">
-
-  <button onclick="iniciarSesion()" class="btn">Ingresar</button>
-  <p id="mensajeLogin" class="mensaje-login"></p>
-</section>
-
-  <section id="inicio" class="hero oculto">
-<section id="formulario" class="card oculto">
-<section id="lista" class="card oculto">
-<section id="calendario" class="card oculto">
 
 <section id="inicio" class="hero">
   <h1>ReservaFácil</h1>
   <h2>Sistema de reservas de mesas para restaurantes</h2>
-  <p>Gestiona tus reservas reservas de manera rápida segura y organizada</p>
-    <p>mejora la experiencia de tus clientes y optimiza la organizacion de tu restaurante</p>
-  <a href="#formulario" class="btn">Iniciar sesión</a>
+  <p>Gestiona tus reservas de manera rápida, segura y organizada.</p>
+  <p>Mejora la experiencia de tus clientes y optimiza la organización de tu restaurante.</p>
+
+  <button class="btn" onclick="abrirLogin()">Iniciar sesión</button>
+</section>
+
+<section id="login" class="login-page oculto">
+  <div class="login-card-figma">
+    <div class="icono-login">🔒</div>
+
+    <h2>Iniciar Sesión</h2>
+    <p>Ingrese sus credenciales para continuar</p>
+
+    <label for="usuario">Correo electrónico</label>
+    <input id="usuario" type="email" placeholder="admin@gmail.com">
+
+    <label for="clave">Contraseña</label>
+    <input id="clave" type="password" placeholder="Contraseña">
+
+    <div class="login-opciones">
+      <span>☐ Recordarme</span>
+      <a href="#">¿Olvidaste tu contraseña?</a>
+    </div>
+
+    <button class="btn-login" onclick="iniciarSesion()">Ingresar</button>
+
+    <p class="registro">¿No tienes cuenta? <span>Regístrate</span></p>
+    <p id="mensajeLogin" class="mensaje-login"></p>
+  </div>
 </section>
 
 <section id="formulario" class="card">
   <h2>Nueva Reserva</h2>
   <p>Complete los datos de la reserva</p>
   <div id="mensaje" class="mensaje"></div>
+
   <form id="formReserva">
     <div class="grid">
       <input id="cliente" placeholder="Nombre del cliente" required>
@@ -47,21 +64,36 @@
       <input id="fecha" type="date" required>
       <input id="hora_inicio" type="time" required>
       <input id="hora_fin" type="time" required>
+
       <select id="personas" required>
         <option value="">Seleccione personas</option>
-        <option>2 personas</option><option>3 personas</option><option>4 personas</option>
-        <option>5 personas</option><option>6 personas</option>
+        <option>2 personas</option>
+        <option>3 personas</option>
+        <option>4 personas</option>
+        <option>5 personas</option>
+        <option>6 personas</option>
       </select>
+
       <select id="mesa" required>
         <option value="">Seleccione mesa</option>
-        <option>Mesa 1</option><option>Mesa 3</option><option>Mesa 5</option>
-        <option>Mesa 8</option><option>Mesa 10</option><option>Mesa 12</option>
+        <option>Mesa 1</option>
+        <option>Mesa 3</option>
+        <option>Mesa 5</option>
+        <option>Mesa 8</option>
+        <option>Mesa 10</option>
+        <option>Mesa 12</option>
       </select>
+
       <select id="estado" required>
-        <option>Confirmada</option><option>Pendiente</option><option>En espera</option><option>Cancelada</option>
+        <option>Confirmada</option>
+        <option>Pendiente</option>
+        <option>En espera</option>
+        <option>Cancelada</option>
       </select>
     </div>
+
     <textarea id="comentarios" placeholder="Comentario adicional"></textarea>
+
     <button type="submit" class="btn">Guardar Reserva</button>
     <button type="reset" class="btn-secundario">Cancelar</button>
   </form>
@@ -76,10 +108,17 @@
 <section id="lista" class="card">
   <h2>Reservas registradas</h2>
   <input id="buscar" placeholder="Buscar reserva..." class="buscar">
+
   <table>
     <thead>
       <tr>
-        <th>Cliente</th><th>Fecha</th><th>Horario</th><th>Personas</th><th>Mesa</th><th>Estado</th><th>Acciones</th>
+        <th>Cliente</th>
+        <th>Fecha</th>
+        <th>Horario</th>
+        <th>Personas</th>
+        <th>Mesa</th>
+        <th>Estado</th>
+        <th>Acciones</th>
       </tr>
     </thead>
     <tbody id="tablaReservas"></tbody>
@@ -89,11 +128,13 @@
 <section id="calendario" class="card">
   <h2>Calendario de reservas</h2>
   <p>Haz clic en un día para ver sus reservas.</p>
+
   <div class="contenedor-calendario">
     <div>
       <h3>Junio 2026</h3>
       <div id="calendarioDias" class="calendario"></div>
     </div>
+
     <div class="reservas-dia">
       <h3>Reservas del día</h3>
       <p id="fechaSeleccionada">Seleccione una fecha</p>
@@ -101,6 +142,7 @@
     </div>
   </div>
 </section>
+
 <script src="script.js"></script>
 </body>
 </html>
