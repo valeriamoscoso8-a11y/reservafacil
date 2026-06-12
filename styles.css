@@ -8,3 +8,23 @@ body{margin:0;font-family:Arial,sans-serif;background:#f5f0e8;color:#222}header{
   background-position: center;
   background-repeat: no-repeat;
 }
+.login-card {
+  max-width: 420px;
+  margin: 90px auto;
+  text-align: center;
+}
+
+.login-card input {
+  width: 90%;
+  padding: 14px;
+  margin: 10px 0;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.mensaje-login {
+  color: #b42318;
+  font-weight: bold;
+  margin-top: 12px;
+}
